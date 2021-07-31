@@ -1,0 +1,18 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&family=Raleway&display=swap");
+@import "./variables";
+@import "./mixins";
+@import "./nav";
+@import "./search";
+@import "./results";
+
+// BASIC PAGE STYLINGS
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: $light;
+  color: #000;
+}
