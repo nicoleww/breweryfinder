@@ -1,0 +1,81 @@
+.Search {
+  width: 80%;
+  min-height: 50vh;
+  background-color: #fff;
+  margin: 100px 0px;
+  position: relative;
+}
+
+.region {
+  @include displayFlexCenter(column);
+  min-height: 25vh;
+  width: 100%;
+}
+
+.region p {
+  font-size: 26px;
+  margin: 30px 0px;
+}
+
+.region .search-btns {
+  @include displayFlexCenter(row);
+  width: 100%;
+}
+
+.search-btns button {
+  margin: 0px 20px;
+  padding: 10px 15px;
+  background-color: $btn;
+  border: none;
+  border-radius: 5px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.search-btns button:hover {
+  background-color: $pink;
+  cursor: pointer;
+}
+
+.search-btns button:focus {
+  background-color: $pink;
+}
+
+.search-bar {
+  @include displayFlexCenter(row);
+  min-height: 25vh;
+  width: 100%;
+}
+
+.search-bar input {
+  padding: 10px 30px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  border: 1px solid $dark;
+  border-radius: 5px;
+  margin-right: 20px;
+}
+
+.search-bar input:focus {
+  outline: none;
+}
+
+.search-bar button {
+  background-color: $teal;
+  border: none;
+  padding: 10px 15px;
+  font-family: "Raleway", sans-serif;
+  font-size: 18px;
+  color: white;
+  font-weight: 700;
+  letter-spacing: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.waiting-for-range {
+  opacity: 0;
+}

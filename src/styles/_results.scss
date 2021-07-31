@@ -1,0 +1,38 @@
+.Results {
+  @include displayFlexCenter(column);
+  width: 100%;
+  height: 100%;
+}
+
+.show-results {
+  width: 80%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.card {
+  margin: 50px 100px;
+  padding: 30px;
+  border-bottom: 2px solid $teal;
+}
+
+.card h2 {
+  color: $pink;
+  font-size: 26px;
+  margin-bottom: 10px;
+  letter-spacing: 2px;
+}
+
+.card p {
+  margin: 5px;
+  font-size: 18px;
+  letter-spacing: 1px;
+}
+
+.card span {
+  font-weight: bold;
+}
+
+.hide-results {
+  display: none;
+}

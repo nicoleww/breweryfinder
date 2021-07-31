@@ -9,18 +9,32 @@ import Results from "./components/Results.js";
 function App() {
 
 // STATE
-  const [resultsClass, setResultsClass] = useState("show-results");
-  const [range, setRange] = useState("");
-  const [results, setResults] = useState({});
+  const [resultsClass, setResultsClass] = useState("hide-results");
+  const [range, setRange] = useState();
+  const [searchBarClass, setSearchBarClass] = useState("waiting-for-range");
+  const [userInput, setUserInput] = useState();
+  const [results, setResults] = useState(["hi"]);
 
 // FUNCTIONS 
 // 1. set to search by either state or city, set state to selected means.
-  const handleRange = () => {
-
+  const handleRange = (clicked) => {
+    setRange(clicked);
+    setSearchBarClass("search-bar");
   }
-// 2. handle user input to finish query string with requested search location
-  const handleInput = async () => {
 
+// 2. handle and capture user inputted location to state
+  const handleUserInput = (e) => {
+    let input = e.target.value.toLowerCase().split(" ").join("_");
+    setUserInput(input);
+  }
+
+// 3. handle form submission to finish query string with requested search location
+  const handleSearch = async (e) => {
+    e.preventDefault();
+    let response = await fetch(`https://api.openbrewerydb.org/breweries?by_${range}=${userInput}&per_page=50`);
+    let results = await response.json();
+    setResultsClass("show-results");
+    setResults(results);
   }
 
   return (
@@ -34,8 +48,10 @@ function App() {
           <a href="https://www.linkedin.com/in/nicolewitherall" target="_blank"><img src={linkedin} /></a>
         </div>
       </nav>
-      <Search />
-      <Results resultsClass={resultsClass} />
+      <div className="content">
+      <Search handleRange={handleRange} searchBarClass={searchBarClass} handleUserInput={handleUserInput} handleSearch={handleSearch} />
+      <Results resultsClass={resultsClass} results={results} />
+      </div>
     </div>
   );
 }
