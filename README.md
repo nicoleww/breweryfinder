@@ -3,9 +3,9 @@
 <p>Brewery Finder is a web app that allows users to connect with local breweries using the OpenBrewery API</p>
 <h2>Screenshots</h2>
 <h3>Desktop</h3>
-<img src="https://imgur.com/a/mQN7NVG" />
+<img src="https://imgur.com/Glme4dB" />
 <h3>Mobile</h3>
-<img src="https://imgur.com/a/hZHWKAg" />
+<img src="https://imgur.com/G1fkkPy" />
 <h2>Technology Used</h2>
 <ul>
   <li>React</li>
